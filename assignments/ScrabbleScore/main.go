@@ -1,6 +1,7 @@
 package main
 
 import (
+	"assignment/hamingDistance/hamingFunc"
 	"fmt"
 	"strings"
 )
@@ -16,13 +17,16 @@ var score = map[string]int{
 }
 
 func scoreSystem(arr []string) int {
-
+	var sum int
+	for i := 0; i < len(arr); i++ {
+		sum += score[arr[i]]
+	}
+	return sum
 }
 func main() {
 	word := "sina"
 	var array = make([]string, len(word))
-	for index, value := range word {
-		array[index] = strings.ToUpper(string(value))
-	}
-	fmt.Println(array)
+	hamingFunc.ConvertStringToArray(strings.ToUpper(word), array)
+
+	fmt.Println(scoreSystem(array))
 }

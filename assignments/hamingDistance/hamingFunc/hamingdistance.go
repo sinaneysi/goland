@@ -1,7 +1,7 @@
 package hamingFunc
 
 // ConvertStringToArray converts a string into a slice of strings
-func convertStringToArray(str string, array []string) []string {
+func ConvertStringToArray(str string, array []string) []string {
 	for index, value := range str {
 		array[index] = string(value)
 	}
